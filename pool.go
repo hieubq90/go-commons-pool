@@ -2,11 +2,14 @@ package pool
 
 import (
 	"errors"
-	"github.com/jolestar/go-commons-pool/collections"
-	"github.com/jolestar/go-commons-pool/concurrent"
 	"math"
 	"sync"
 	"time"
+
+	"fmt"
+
+	"github.com/jolestar/go-commons-pool/collections"
+	"github.com/jolestar/go-commons-pool/concurrent"
 )
 
 type baseErr struct {
@@ -189,6 +192,16 @@ func (pool *ObjectPool) create() (*PooledObject, error) {
 	//	}
 	pool.allObjects.Put(p.Object, p)
 	return p, nil
+}
+
+func (pool *ObjectPool) Destroy(object interface{}) {
+	if object != nil {
+		p, ok := pool.allObjects.Get(object).(*PooledObject)
+		if ok {
+			fmt.Println("start destroy object")
+			pool.doDestroy(p, false)
+		}
+	}
 }
 
 func (pool *ObjectPool) destroy(toDestroy *PooledObject) {
