@@ -6,10 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"fmt"
-
-	"github.com/jolestar/go-commons-pool/collections"
-	"github.com/jolestar/go-commons-pool/concurrent"
+	"github.com/hieubq90/go-commons-pool/collections"
+	"github.com/hieubq90/go-commons-pool/concurrent"
 )
 
 type baseErr struct {
@@ -198,7 +196,6 @@ func (pool *ObjectPool) Destroy(object interface{}) {
 	if object != nil {
 		p, ok := pool.allObjects.Get(object).(*PooledObject)
 		if ok {
-			fmt.Println("start destroy object")
 			pool.doDestroy(p, false)
 		}
 	}

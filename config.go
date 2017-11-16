@@ -2,7 +2,6 @@ package pool
 
 import (
 	"errors"
-	"fmt"
 	"math"
 	"sync"
 )
@@ -41,7 +40,7 @@ const (
 	// DefaultBlockWhenExhausted is the default value of ObjectPoolConfig.BlockWhenExhausted
 	DefaultBlockWhenExhausted = true
 	// DefaultEvictionPolicyName is the default value of ObjectPoolConfig.EvictionPolicyName
-	DefaultEvictionPolicyName = "github.com/jolestar/go-commons-pool/DefaultEvictionPolicy"
+	DefaultEvictionPolicyName = "github.com/hieubq90/go-commons-pool/DefaultEvictionPolicy"
 )
 
 // ObjectPoolConfig is ObjectPool config, include cap, block, valid strategy, evict strategy etc.
@@ -266,7 +265,6 @@ func RegistryEvictionPolicy(name string, policy EvictionPolicy) {
 	if name == "" || policy == nil {
 		panic(errors.New("invalid argument"))
 	}
-	fmt.Println("RegistryEvictionPolicy", name)
 	policiesMutex.Lock()
 	policies[name] = policy
 	policiesMutex.Unlock()

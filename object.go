@@ -2,9 +2,10 @@ package pool
 
 import (
 	"fmt"
-	"github.com/jolestar/go-commons-pool/collections"
 	"sync"
 	"time"
+
+	"github.com/hieubq90/go-commons-pool/collections"
 )
 
 // PooledObjectState is PooledObjectState enum const

@@ -2,9 +2,10 @@ package collections
 
 import (
 	"errors"
-	"github.com/jolestar/go-commons-pool/concurrent"
 	"sync"
 	"time"
+
+	"github.com/hieubq90/go-commons-pool/concurrent"
 )
 
 // InterruptedErr when deque block method bean interrupted will return this err

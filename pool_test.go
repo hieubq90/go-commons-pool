@@ -4,10 +4,6 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/jolestar/go-commons-pool/collections"
-	"github.com/jolestar/go-commons-pool/concurrent"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/suite"
 	"math"
 	"math/rand"
 	"os"
@@ -15,6 +11,11 @@ import (
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/hieubq90/go-commons-pool/collections"
+	"github.com/hieubq90/go-commons-pool/concurrent"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/suite"
 )
 
 type TestObject struct {

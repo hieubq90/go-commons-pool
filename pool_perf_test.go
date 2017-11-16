@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 	//"reflect"
-	"github.com/jolestar/go-commons-pool/concurrent"
 	"math/rand"
+
+	"github.com/hieubq90/go-commons-pool/concurrent"
 )
 
 type BenchObject struct {
